@@ -1,125 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ISH TOP UP STORE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07120d">
+<title>ISH TOP UP STORE | Bangladesh</title>
 <style>
-:root{--bg:#090e13;--panel:#121c25;--line:#263943;--green:#39e6a1;--muted:#a7b8b2}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
-header{text-align:center;padding:22px 14px;background:#101a22;border-bottom:1px solid var(--line)}
-.brand{font-size:26px;font-weight:900;color:var(--green);letter-spacing:.5px}header p{margin:7px 0 0;color:var(--muted);font-size:13px}
-main{max-width:760px;margin:auto;padding:18px}.hero{padding:25px 18px;text-align:center;border-radius:17px;background:linear-gradient(135deg,#124333,#10232d);margin-bottom:22px}
-.hero h1{margin:0 0 8px;font-size:26px}.hero p{margin:0;color:#c6d9d1;line-height:1.5}
-h2{font-size:19px;margin:22px 0 12px}.games{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.game{padding:15px 5px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:white;cursor:pointer;text-align:center}
-.game.active{border:2px solid var(--green);background:#143329}.game .emoji{font-size:30px;display:block;margin-bottom:8px}.game b{font-size:13px}
-.panel{margin-top:17px;padding:18px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
-label{display:block;margin:14px 0 7px;font-size:13px;color:#cbd8d3}
-input,select{width:100%;padding:13px;border-radius:9px;border:1px solid #344650;background:#0a1219;color:white;font-size:15px}
-.paybox{margin-top:10px;padding:13px;border-radius:10px;background:#0a1219;border:1px solid var(--line);line-height:1.5}
-.paybox strong{color:var(--green)}.muted{color:var(--muted);font-size:12px;line-height:1.6}
-button{border:0;border-radius:10px;padding:14px;font-weight:bold;cursor:pointer}
-.submit{width:100%;margin-top:19px;background:var(--green);color:#07150f;font-size:16px}
-.notice{padding:12px;border-radius:10px;background:#172a27;color:#c7e8dc;font-size:12px;line-height:1.5;margin-top:14px}
-footer{text-align:center;padding:25px;color:#83958e;font-size:12px}
-@media(max-width:380px){.brand{font-size:22px}.game b{font-size:11px}}
+:root{--bg:#07120d;--panel:#101e16;--panel2:#16291e;--line:#294b38;--green:#5bf0a6;--muted:#a9bdb0;--white:#f4fff8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#1c573b 0,transparent 36%),var(--bg);color:var(--white);font:15px/1.55 system-ui,Arial,sans-serif}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;background:#07120deF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);padding:13px max(4vw,16px);display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.06em}.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(140deg,#8affc6,#19a766);display:grid;place-items:center;color:#052012;font-weight:1000;font-size:19px}
+nav{display:flex;gap:20px;color:var(--muted);font-size:13px}nav a:hover{color:var(--green)}
+.btn{border:0;border-radius:11px;background:var(--green);color:#062113;padding:11px 16px;font-weight:900}.outline{border:1px solid var(--line);border-radius:11px;background:#102017;color:var(--white);padding:10px 14px;font-weight:750}
+.hero,.section{max-width:1120px;margin:auto;padding-left:20px;padding-right:20px}.hero{padding-top:72px;padding-bottom:55px}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--green);font-weight:900}.hero h1{font-size:clamp(42px,8vw,78px);line-height:.98;letter-spacing:-.055em;margin:15px 0}.hero h1 span{color:var(--green)}.hero p{max-width:570px;color:var(--muted);font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.trust{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:28px}.trust span:before{content:"✓ ";color:var(--green);font-weight:900}
+.section{padding-top:30px;padding-bottom:48px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:18px}.section h2{font-size:clamp(26px,4vw,38px);margin:5px 0}.muted,.hint{color:var(--muted)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#0d1b13;color:var(--muted);border-radius:30px;padding:8px 13px}.filter.active{background:var(--green);color:#062113;border-color:var(--green);font-weight:900}
+.search{width:100%;max-width:380px;padding:12px 14px;border-radius:11px;border:1px solid var(--line);background:#0b1810;color:white;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.game{background:linear-gradient(150deg,#172a1e,#0e1a13);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;min-height:220px}.game:hover{border-color:#59b783;transform:translateY(-2px)}.logo{width:68px;height:68px;object-fit:contain;border-radius:15px;background:#fff;padding:5px;margin-bottom:13px}.game h3{margin:0;font-size:19px}.game p{color:var(--muted);font-size:13px;margin:5px 0 16px}.game .btn{width:100%;margin-top:auto}
+.catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}.item{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:9px}.item strong{font-size:15px}.price{font-size:20px;font-weight:950;color:var(--green)}.item button{width:100%}
+.cartbox,.info-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.cart-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:10px 0}.cart-row button{background:none;border:0;color:#ff9b9b}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:950;margin-top:15px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}.payname{font-weight:900;font-size:18px}.number{font-size:24px;font-weight:950;letter-spacing:.04em;margin:9px 0}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}.step b{color:var(--green)}.step p{color:var(--muted);font-size:13px}
+label{display:block;font-size:13px;font-weight:800;margin:12px 0 6px;color:#d5e9dc}input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #365642;background:#08140d;color:white;min-height:44px}textarea{min-height:75px;resize:vertical}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.notice{font-size:12px;color:var(--muted);background:#17291e;border:1px solid #345640;border-radius:11px;padding:12px;margin:12px 0}.success{color:var(--green);font-weight:800}footer{text-align:center;border-top:1px solid var(--line);padding:27px 15px;color:var(--muted);font-size:12px}
+@media(max-width:650px){nav{display:none}.hero{padding-top:50px}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.brand{font-size:12px}.logo{width:58px;height:58px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="brand">ISH TOP UP STORE</div><p>Fast • Reliable • Gaming Top-Ups</p></header>
-<main>
-<section class="hero"><h1>LEVEL UP YOUR GAME</h1><p>Select your game and package, enter your player details, then send your order.</p></section>
-<h2>🎮 Select Your Game</h2>
-<div class="games">
-<button class="game active" type="button" onclick="chooseGame('Mobile Legends',this)"><span class="emoji">⚔️</span><b>Mobile Legends</b></button>
-<button class="game" type="button" onclick="chooseGame('Free Fire',this)"><span class="emoji">🔥</span><b>Free Fire</b></button>
-<button class="game" type="button" onclick="chooseGame('Roblox',this)"><span class="emoji">🟥</span><b>Roblox</b></button>
-</div>
-<section class="panel">
-<h2 id="gameTitle">⚔️ Mobile Legends</h2>
-<label for="package">Select package</label><select id="package"><option value="">Choose a package</option></select>
-<label for="player">Player ID / User ID</label><input id="player" placeholder="Enter your Player ID">
-<div id="serverWrap"><label for="server">Server ID</label><input id="server" placeholder="Enter your Server ID"></div>
-<label for="customer">Your name</label><input id="customer" placeholder="Enter your name">
-<label for="email">Email address (optional)</label><input id="email" type="email" placeholder="Enter your email">
-<label for="payment">Payment method</label><select id="payment"><option value="">Choose bKash or Nagad</option><option>bKash</option><option>Nagad</option></select>
-<div class="paybox"><strong>bKash</strong><br>Payment number: 01819340848</div>
-<div class="paybox"><strong>Nagad</strong><br>Payment number: 01819340848</div>
-<label for="trx">Transaction ID</label><input id="trx" placeholder="Enter payment Transaction ID">
-<p class="muted">Please pay using the selected method and enter your transaction ID. Your order will be sent to WhatsApp for confirmation. Do not share your PIN or OTP.</p>
-<button class="submit" type="button" onclick="placeOrder()">PLACE ORDER →</button>
-<div class="notice">Orders are emailed to rashidnayem58@gmail.com for review. Payment is not automatically verified; the store owner must confirm payment and fulfil the order.</div>
+<header>
+ <a class="brand" href="#"><span class="mark">ISH</span><span>ISH TOP UP <span style="color:var(--green)">STORE</span></span></a>
+ <nav><a href="#games">Games</a><a href="#packages">Packages</a><a href="#payment">Payment</a><a href="#checkout">Checkout</a></nav>
+ <a class="btn" href="#games">Shop now</a>
+</header>
+<section class="hero">
+ <div class="eyebrow">BANGLADESH GAMING TOP-UP STORE</div>
+ <h1>POWER UP<br>YOUR <span>GAME.</span></h1>
+ <p>Choose your game, add a package to your cart, enter your player details and submit your order.</p>
+ <div class="actions"><a class="btn" href="#games">Explore games ↗</a><a class="outline" href="#payment">bKash & Nagad payments</a></div>
+ <div class="trust"><span>Bangladesh prices in BDT</span><span>Clear package totals</span><span>Order by email</span></div>
 </section>
-</main>
-<footer>© 2026 ISH TOP UP STORE</footer>
+
+<section class="section" id="games">
+ <div class="section-head"><div><div class="eyebrow">GAME CATALOGUE</div><h2>Choose your game</h2><div class="muted">Original game logo artwork is loaded from image sources.</div></div>
+ <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="Free Fire">Free Fire</button><button class="filter" data-filter="MLBB">MLBB</button><button class="filter" data-filter="Roblox">Roblox</button></div></div>
+ <div class="grid" id="gameGrid"></div>
+</section>
+
+<section class="section" id="packages">
+ <div class="eyebrow">PRICE LIST</div><h2>Available packages</h2>
+ <input class="search" id="search" placeholder="Search packages (e.g. 100 Diamonds)" aria-label="Search packages">
+ <div class="catalog" id="packageGrid"></div>
+</section>
+
+<section class="section" id="cart">
+ <div class="eyebrow">YOUR SELECTION</div><h2>Shopping cart</h2>
+ <div class="cartbox"><div id="cartItems" class="muted">Your cart is empty. Add a package above.</div><div class="total"><span>Total</span><span id="cartTotal">৳0</span></div><a class="btn" style="display:inline-block;margin-top:14px" href="#checkout">Continue to checkout ↓</a></div>
+</section>
+
+<section class="section" id="payment">
+ <div class="eyebrow">PAYMENT OPTIONS</div><h2>bKash or Nagad</h2>
+ <p class="muted">Choose your preferred payment method at checkout. Send only the displayed order total.</p>
+ <div class="payment-grid">
+  <div class="info-card"><div class="payname">bKash</div><div class="number">01819340848</div><button class="outline" onclick="copyNumber()">Copy number</button></div>
+  <div class="info-card"><div class="payname">Nagad</div><div class="number">01819340848</div><button class="outline" onclick="copyNumber()">Copy number</button></div>
+ </div>
+ <p class="hint">Never share your payment PIN, password or OTP. The store does not need these details.</p>
+</section>
+
+<section class="section" id="checkout">
+ <div class="eyebrow">SECURE ORDER DETAILS</div><h2>Checkout</h2>
+ <div class="two">
+  <div class="info-card">
+   <form id="orderForm">
+    <label for="customer">Customer name</label><input id="customer" required autocomplete="name" placeholder="Your full name">
+    <label for="email">Email address</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
+    <label for="player">Player ID / Username</label><input id="player" required placeholder="Enter your game ID or username">
+    <label for="server">Server / Zone ID (if required)</label><input id="server" placeholder="MLBB Zone ID, if applicable">
+    <label for="paymentMethod">Payment method</label><select id="paymentMethod" required><option value="">Choose payment method</option><option value="bKash">bKash</option><option value="Nagad">Nagad</option></select>
+    <label for="trx">Transaction ID (TrxID)</label><input id="trx" required placeholder="Enter the transaction ID after payment">
+    <label for="note">Order note (optional)</label><textarea id="note" placeholder="Any extra information"></textarea>
+    <div class="notice">Payment number: <strong>01819340848</strong><br>Order submission does not automatically verify payment. Your payment will remain pending until the store checks it.</div>
+    <button class="btn" style="width:100%" type="submit">Submit order by email ↗</button>
+    <p id="status" class="hint" aria-live="polite"></p>
+   </form>
+  </div>
+  <div class="info-card">
+   <h3>Order summary</h3><div id="checkoutSummary" class="muted">Add packages to your cart to see the summary.</div>
+   <div class="total"><span>Amount due</span><span id="checkoutTotal">৳0</span></div>
+   <div class="notice"><strong>Order status:</strong> Pending review<br>Entering a TrxID is not proof of payment. Admin must verify the transaction separately.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="help">
+ <div class="eyebrow">NEED HELP?</div><h2>How ordering works</h2>
+ <div class="steps">
+  <div class="step"><b>01 / Select</b><h3>Choose a game</h3><p>Browse the catalogue and add the package you want.</p></div>
+  <div class="step"><b>02 / Details</b><h3>Enter player info</h3><p>Double-check your Player ID and server information.</p></div>
+  <div class="step"><b>03 / Pay</b><h3>Send the payment</h3><p>Pay the displayed total using bKash or Nagad.</p></div>
+  <div class="step"><b>04 / Submit</b><h3>Send your order</h3><p>Submit the prepared email and wait for store confirmation.</p></div>
+ </div>
+ <div class="info-card" style="margin-top:14px"><h3>Contact & support</h3><p>Email: <a style="color:var(--green)" href="mailto:rashidnayem58@gmail.com">rashidnayem58@gmail.com</a></p><p class="hint">For order questions, include your order details. Never send payment PINs or OTPs.</p></div>
+</section>
+<footer>© 2026 ISH TOP UP STORE · Bangladesh<br>Customer support: rashidnayem58@gmail.com</footer>
+
 <script>
-const orderPhone='8801819340848';
-const catalogs={
-'Mobile Legends':['86 Diamonds','172 Diamonds','257 Diamonds','344 Diamonds','429 Diamonds','514 Diamonds','Weekly Pass','Twilight Pass'],
-'Free Fire':['100 Diamonds','210 Diamonds','310 Diamonds','520 Diamonds','1060 Diamonds','2180 Diamonds','Weekly Membership','Monthly Membership'],
-'Roblox':['Robux Package','Roblox Membership','Premium Membership','Other Roblox Package']
+const LOGOS={
+ "Free Fire":"https://upload.wikimedia.org/wikipedia/en/4/4e/Garena_Free_Fire总_logo.png",
+ "MLBB":"https://upload.wikimedia.org/wikipedia/en/7/7a/Mobile_Legends_Bang_Bang_logo.png",
+ "Roblox":"https://upload.wikimedia.org/wikipedia/commons/6/6a/Roblox_logo.svg"
 };
-let currentGame='Mobile Legends';
-function refreshPackages(){
- const sel=document.getElementById('package');
- sel.innerHTML='<option value="">Choose a package</option>';
- catalogs[currentGame].forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;sel.appendChild(opt)});
+// If a logo host changes its file address, the image falls back to a clean text label (never an emoji).
+const products=[
+ {game:"Free Fire",items:[
+ ["25 Diamonds",22],["50 Diamonds",40],["100 Diamonds",80],["115 Diamonds",79],["240 Diamonds",158],["355 Diamonds",237],["480 Diamonds",315],["505 Diamonds",332],["610 Diamonds",410],["850 Diamonds",565],["1090 Diamonds",720],["1240 Diamonds",800],["1720 Diamonds",1125],["2090 Diamonds",1365],["2530 Diamonds",1590],["4010 Diamonds",2550],["5060 Diamonds",3200],["10120 Diamonds",6400]]},
+ {game:"MLBB",items:[
+ ["Weekly Elite Bundle",134],["Weekly Pass",236],["Monthly Epic Bundle",578],["Twilight Pass",1099],["50 + 50 Diamonds",108],["150 + 150 Diamonds",323],["250 + 250 Diamonds",532],["500 + 500 Diamonds",1041,"Sold out"],["5 Diamonds",15],["14 Diamonds",33],["42 Diamonds",98],["86 Diamonds",171],["172 Diamonds",336],["257 Diamonds",499],["429 Diamonds",852],["514 Diamonds",1018],["706 Diamonds",1329],["878 Diamonds",1720],["963 Diamonds",1856],["1050 Diamonds",2069],["1220 Diamonds",2390],["1412 Diamonds",2744],["1669 Diamonds",3252],["2539 Diamonds",4772],["2901 Diamonds",5481],["3688 Diamonds",6639],["5532 Diamonds",9959],["9288 Diamonds",16597]]},
+ {game:"Roblox",items:[
+ ["100 Robux",85],["200 Robux",170],["500 Robux",425],["1,000 Robux",850],["2,000 Robux",1700],["5,000 Robux",4250]]}
+];
+let filter="all",cart=[];
+const money=n=>"৳"+Number(n).toLocaleString("en-BD");
+function renderGames(){
+ const arr=products.filter(p=>filter==="all"||p.game===filter);
+ document.getElementById("gameGrid").innerHTML=arr.map(p=>`<article class="game"><img class="logo" src="${LOGOS[p.game]}" alt="${p.game} logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><strong style="display:none;font-size:20px;margin:8px 0">${p.game}</strong><h3>${p.game}</h3><p>${p.items.filter(x=>x[2]!=="Sold out").length} available packages</p><button class="btn" onclick="showFor('${p.game}')">View packages ↓</button></article>`).join("");
 }
-function chooseGame(game,button){
- currentGame=game;
- document.querySelectorAll('.game').forEach(el=>el.classList.remove('active'));
- button.classList.add('active');
- document.getElementById('gameTitle').textContent=(game==='Mobile Legends'?'⚔️ ':game==='Free Fire'?'🔥 ':'🟥 ')+game;
- document.getElementById('serverWrap').style.display=game==='Mobile Legends'?'block':'none';
- refreshPackages();
+function renderPackages(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const arr=products.flatMap(p=>p.items.map(x=>({game:p.game,name:x[0],price:x[1],sold:x[2]==="Sold out"}))).filter(x=>(filter==="all"||x.game===filter)&&(`${x.game} ${x.name}`.toLowerCase().includes(q)));
+ document.getElementById("packageGrid").innerHTML=arr.map((x,i)=>`<article class="item"><span class="muted" style="font-size:11px">${x.game}</span><strong>${x.name}</strong><span class="price">${money(x.price)}</span><button class="${x.sold?"outline":"btn"}" ${x.sold?"disabled":""} onclick="addCart('${x.game}',${JSON.stringify(x.name)},${x.price})">${x.sold?"Currently unavailable":"Add to cart +"}</button></article>`).join("")||'<p class="muted">No matching packages found.</p>';
 }
-function placeOrder(){
- const pkg=document.getElementById('package').value;
- const player=document.getElementById('player').value.trim();
- const customer=document.getElementById('customer').value.trim();
- const payment=document.getElementById('payment').value;
- const trx=document.getElementById('trx').value.trim();
- const server=document.getElementById('server').value.trim();
- const email=document.getElementById('email').value.trim();
- if(!pkg||!player||!customer||!payment||!trx||(currentGame==='Mobile Legends'&&!server)){
-  alert('Please complete all required fields and select a package.');return;
- }
- const formData=new FormData();
- formData.append('_subject','New order - ISH TOP UP STORE');
- formData.append('_template','table');
- formData.append('Game',currentGame);
- formData.append('Package',pkg);
- formData.append('Player ID',player);
- if(currentGame==='Mobile Legends') formData.append('Server ID',server);
- formData.append('Customer name',customer);
- formData.append('Customer email',email||'Not provided');
- formData.append('Payment method',payment);
- formData.append('Transaction ID',trx);
- formData.append('_captcha','false');
- fetch('https://formsubmit.co/ajax/rashidnayem58@gmail.com',{
-  method:'POST',
-  body:formData,
-  headers:{'Accept':'application/json'}
- })
- .then(response=>response.json())
- .then(result=>{
-  if(result.success==='true'||result.success===true){
-   alert('Your order has been submitted! The store will review your payment.');
-   document.getElementById('package').value='';
-   document.getElementById('player').value='';
-   document.getElementById('server').value='';
-   document.getElementById('customer').value='';
-   document.getElementById('email').value='';
-   document.getElementById('payment').value='';
-   document.getElementById('trx').value='';
-  }else{
-   alert('The email service did not accept the order. Please try again later.');
-  }
- })
- .catch(()=>alert('Could not send the order. Check your internet connection and try again.'));
+function showFor(game){filter=game;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));renderGames();renderPackages();document.getElementById("packages").scrollIntoView({behavior:"smooth"});}
+function addCart(game,name,price){cart.push({game,name,price,id:Date.now()+Math.random()});renderCart();document.getElementById("cart").scrollIntoView({behavior:"smooth"});}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);renderCart();}
+function total(){return cart.reduce((s,x)=>s+x.price,0);}
+function renderCart(){
+ const rows=cart.map(x=>`<div class="cart-row"><div><strong>${x.name}</strong><div class="hint">${x.game} · ${money(x.price)}</div></div><button onclick="removeCart(${x.id})" aria-label="Remove item">Remove</button></div>`).join("");
+ document.getElementById("cartItems").innerHTML=rows||"Your cart is empty. Add a package above.";
+ document.getElementById("cartTotal").textContent=money(total());
+ document.getElementById("checkoutTotal").textContent=money(total());
+ document.getElementById("checkoutSummary").innerHTML=rows||"Add packages to your cart to see the summary.";
 }
-refreshPackages();
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderGames();renderPackages();}));
+document.getElementById("search").addEventListener("input",renderPackages);
+function copyNumber(){if(navigator.clipboard?.writeText){navigator.clipboard.writeText("01819340848").then(()=>alert("Payment number copied")).catch(()=>alert("Payment number: 01819340848"));}else alert("Payment number: 01819340848");}
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!cart.length){alert("Your cart is empty. Add a package first.");return;}
+ const v=id=>document.getElementById(id).value.trim();
+ const subject=encodeURIComponent("New order - ISH TOP UP STORE");
+ const lines=cart.map((x,i)=>`${i+1}. ${x.game} - ${x.name} - ${money(x.price)}`).join("\n");
+ const body=encodeURIComponent(
+ `NEW ORDER - ISH TOP UP STORE\n\nItems:\n${lines}\n\nTOTAL: ${money(total())}\nCustomer: ${v("customer")}\nEmail: ${v("email")}\nPlayer ID / Username: ${v("player")}\nServer / Zone ID: ${v("server")||"Not supplied"}\nPayment method: ${v("paymentMethod")}\nPayment number: 01819340848\nTransaction ID: ${v("trx")}\nOrder note: ${v("note")||"None"}\n\nPAYMENT STATUS: PENDING MANUAL VERIFICATION\nPlease verify the payment independently before fulfilling the order.`
+ );
+ document.getElementById("status").textContent="Opening your email app. Review the order and press Send to submit it.";
+ window.location.href=`mailto:rashidnayem58@gmail.com?subject=${subject}&body=${body}`;
+});
+renderGames();renderPackages();renderCart();
 </script>
 </body>
 </html>
