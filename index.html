@@ -49,7 +49,7 @@ footer{text-align:center;padding:25px;color:#83958e;font-size:12px}
 <label for="trx">Transaction ID</label><input id="trx" placeholder="Enter payment Transaction ID">
 <p class="muted">Please pay using the selected method and enter your transaction ID. Your order will be sent to WhatsApp for confirmation. Do not share your PIN or OTP.</p>
 <button class="submit" type="button" onclick="placeOrder()">PLACE ORDER →</button>
-<div class="notice">Orders are not automatically verified or marked complete. The store owner must confirm payment and fulfil the order.</div>
+<div class="notice">Orders are emailed to rashidnayem58@gmail.com for review. Payment is not automatically verified; the store owner must confirm payment and fulfil the order.</div>
 </section>
 </main>
 <footer>© 2026 ISH TOP UP STORE</footer>
@@ -85,14 +85,39 @@ function placeOrder(){
  if(!pkg||!player||!customer||!payment||!trx||(currentGame==='Mobile Legends'&&!server)){
   alert('Please complete all required fields and select a package.');return;
  }
- const message=[
-  'NEW ORDER - ISH TOP UP STORE','Game: '+currentGame,'Package: '+pkg,
-  'Player ID: '+player,
-  ...(currentGame==='Mobile Legends'?['Server ID: '+server]:[]),
-  'Customer: '+customer,'Email: '+(email||'Not provided'),
-  'Payment: '+payment,'Transaction ID: '+trx
- ].join('\n');
- window.open('https://wa.me/'+orderPhone+'?text='+encodeURIComponent(message),'_blank');
+ const formData=new FormData();
+ formData.append('_subject','New order - ISH TOP UP STORE');
+ formData.append('_template','table');
+ formData.append('Game',currentGame);
+ formData.append('Package',pkg);
+ formData.append('Player ID',player);
+ if(currentGame==='Mobile Legends') formData.append('Server ID',server);
+ formData.append('Customer name',customer);
+ formData.append('Customer email',email||'Not provided');
+ formData.append('Payment method',payment);
+ formData.append('Transaction ID',trx);
+ formData.append('_captcha','false');
+ fetch('https://formsubmit.co/ajax/rashidnayem58@gmail.com',{
+  method:'POST',
+  body:formData,
+  headers:{'Accept':'application/json'}
+ })
+ .then(response=>response.json())
+ .then(result=>{
+  if(result.success==='true'||result.success===true){
+   alert('Your order has been submitted! The store will review your payment.');
+   document.getElementById('package').value='';
+   document.getElementById('player').value='';
+   document.getElementById('server').value='';
+   document.getElementById('customer').value='';
+   document.getElementById('email').value='';
+   document.getElementById('payment').value='';
+   document.getElementById('trx').value='';
+  }else{
+   alert('The email service did not accept the order. Please try again later.');
+  }
+ })
+ .catch(()=>alert('Could not send the order. Check your internet connection and try again.'));
 }
 refreshPackages();
 </script>
